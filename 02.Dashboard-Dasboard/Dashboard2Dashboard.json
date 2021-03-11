@@ -1,0 +1,219 @@
+[
+    {
+        "id": "94681d06.d4b04",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "9f08102c.aee7b",
+        "type": "counter",
+        "z": "94681d06.d4b04",
+        "name": "",
+        "init": "0",
+        "step": "1",
+        "lower": null,
+        "upper": null,
+        "mode": "increment",
+        "outputs": "1",
+        "x": 500,
+        "y": 340,
+        "wires": [
+            [
+                "6fbf99e9.538198",
+                "83431cf4.c28f3",
+                "ae322732.feb8e8"
+            ]
+        ]
+    },
+    {
+        "id": "554eaf95.abdf6",
+        "type": "function",
+        "z": "94681d06.d4b04",
+        "name": "",
+        "func": "msg.reset=1;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 300,
+        "y": 460,
+        "wires": [
+            [
+                "9f08102c.aee7b"
+            ]
+        ]
+    },
+    {
+        "id": "7e6e16a6.41a678",
+        "type": "ui_button",
+        "z": "94681d06.d4b04",
+        "name": "",
+        "group": "fa746a89.6dd5e8",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Sakatu",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 110,
+        "y": 340,
+        "wires": [
+            [
+                "9f08102c.aee7b"
+            ]
+        ]
+    },
+    {
+        "id": "5a1ee19c.f3f6e",
+        "type": "ui_button",
+        "z": "94681d06.d4b04",
+        "name": "",
+        "group": "fa746a89.6dd5e8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Reset",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 130,
+        "y": 460,
+        "wires": [
+            [
+                "554eaf95.abdf6"
+            ]
+        ]
+    },
+    {
+        "id": "6fbf99e9.538198",
+        "type": "ui_text",
+        "z": "94681d06.d4b04",
+        "group": "fa746a89.6dd5e8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Kontatzailea",
+        "format": "{{msg.count}}",
+        "layout": "row-spread",
+        "x": 740,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "83431cf4.c28f3",
+        "type": "ui_gauge",
+        "z": "94681d06.d4b04",
+        "name": "",
+        "group": "fa746a89.6dd5e8",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Kontatzailea",
+        "label": "units",
+        "format": "{{count}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "20",
+        "seg2": "60",
+        "x": 750,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "1c6f49e2.0b05f6",
+        "type": "ui_chart",
+        "z": "94681d06.d4b04",
+        "name": "",
+        "group": "fa746a89.6dd5e8",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "Kontatzailea",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": "30",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 850,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ae322732.feb8e8",
+        "type": "function",
+        "z": "94681d06.d4b04",
+        "name": "",
+        "func": "msg.payload=msg.count;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 670,
+        "y": 480,
+        "wires": [
+            [
+                "1c6f49e2.0b05f6"
+            ]
+        ]
+    },
+    {
+        "id": "fa746a89.6dd5e8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Makina",
+        "tab": "68f841ca.45cd1",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "68f841ca.45cd1",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]

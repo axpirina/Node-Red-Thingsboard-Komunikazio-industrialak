@@ -1,0 +1,381 @@
+[
+    {
+        "id": "1bf8970d.a07109",
+        "type": "tab",
+        "label": "Ariketa 03",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "4e47a19.0d1286",
+        "type": "counter",
+        "z": "1bf8970d.a07109",
+        "name": "",
+        "init": "0",
+        "step": "1",
+        "lower": null,
+        "upper": null,
+        "mode": "increment",
+        "outputs": "1",
+        "x": 500,
+        "y": 340,
+        "wires": [
+            [
+                "8e4ccf06.9150b",
+                "b6660936.cc81f8",
+                "b1ae378c.c89f28",
+                "e6ec0ec.a48c8f"
+            ]
+        ]
+    },
+    {
+        "id": "4e8b187b.255018",
+        "type": "function",
+        "z": "1bf8970d.a07109",
+        "name": "0 ra erreseteatu",
+        "func": "msg.reset=true;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 300,
+        "y": 460,
+        "wires": [
+            [
+                "4e47a19.0d1286"
+            ]
+        ]
+    },
+    {
+        "id": "a36ba487.ed72e8",
+        "type": "ui_button",
+        "z": "1bf8970d.a07109",
+        "name": "",
+        "group": "7fba33d1.561b7c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Reset",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 110,
+        "y": 460,
+        "wires": [
+            [
+                "4e8b187b.255018"
+            ]
+        ]
+    },
+    {
+        "id": "8e4ccf06.9150b",
+        "type": "ui_text",
+        "z": "1bf8970d.a07109",
+        "group": "7fba33d1.561b7c",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Kontatzailea",
+        "format": "{{msg.count}}",
+        "layout": "row-spread",
+        "x": 740,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "b6660936.cc81f8",
+        "type": "ui_gauge",
+        "z": "1bf8970d.a07109",
+        "name": "",
+        "group": "7fba33d1.561b7c",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Kontatzailea",
+        "label": "units",
+        "format": "{{count}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "20",
+        "seg2": "60",
+        "x": 750,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "c1f523f3.fdfed",
+        "type": "ui_chart",
+        "z": "1bf8970d.a07109",
+        "name": "",
+        "group": "7fba33d1.561b7c",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "Kontatzailea",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": "30",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 890,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b1ae378c.c89f28",
+        "type": "function",
+        "z": "1bf8970d.a07109",
+        "name": "payload=count",
+        "func": "msg.payload=msg.count;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 700,
+        "y": 400,
+        "wires": [
+            [
+                "c1f523f3.fdfed"
+            ]
+        ]
+    },
+    {
+        "id": "1d1d714d.434b1f",
+        "type": "rpi-gpio in",
+        "z": "1bf8970d.a07109",
+        "name": "",
+        "pin": "32",
+        "intype": "tri",
+        "debounce": "250",
+        "read": false,
+        "x": 110,
+        "y": 340,
+        "wires": [
+            [
+                "fae26983.8c5f98",
+                "fb5aaef0.6a8d7",
+                "cf5247d5.b61b68",
+                "6115e2d3.4040fc"
+            ]
+        ]
+    },
+    {
+        "id": "fae26983.8c5f98",
+        "type": "function",
+        "z": "1bf8970d.a07109",
+        "name": "True soilik kontatu",
+        "func": "if (msg.payload==1){\nreturn msg;}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 310,
+        "y": 340,
+        "wires": [
+            [
+                "4e47a19.0d1286"
+            ]
+        ]
+    },
+    {
+        "id": "fb5aaef0.6a8d7",
+        "type": "rpi-gpio out",
+        "z": "1bf8970d.a07109",
+        "name": "",
+        "pin": "31",
+        "set": "",
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "x": 320,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "8a9574f2.154878",
+        "type": "ui_text",
+        "z": "1bf8970d.a07109",
+        "group": "70a23a2a.da5e54",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Makinaren egoera ",
+        "format": "{{msg.egoera}}",
+        "layout": "row-spread",
+        "x": 590,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "cf5247d5.b61b68",
+        "type": "function",
+        "z": "1bf8970d.a07109",
+        "name": "Egoera adierazlea",
+        "func": "if (msg.payload==1){msg.egoera=\"Makina Piztuta\"}\nif (msg.payload==0){msg.egoera=\"Makina Itzalita\"}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 350,
+        "y": 180,
+        "wires": [
+            [
+                "8a9574f2.154878"
+            ]
+        ]
+    },
+    {
+        "id": "c54dabf0.767e88",
+        "type": "ui_led",
+        "z": "1bf8970d.a07109",
+        "group": "70a23a2a.da5e54",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "right",
+        "labelAlignment": "center",
+        "colorForValue": [
+            {
+                "color": "red",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "green",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "name": "",
+        "x": 530,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "6115e2d3.4040fc",
+        "type": "function",
+        "z": "1bf8970d.a07109",
+        "name": "Egoera adierazlea",
+        "func": "if (msg.payload==1){msg.payload=true}\nif (msg.payload==0){msg.payload=false}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 330,
+        "y": 280,
+        "wires": [
+            [
+                "c54dabf0.767e88"
+            ]
+        ]
+    },
+    {
+        "id": "e6ec0ec.a48c8f",
+        "type": "function",
+        "z": "1bf8970d.a07109",
+        "name": "==10 Emaila bidali",
+        "func": "if (msg.count==10){\n    msg.payload=\"Oraintxe egin ditu gure makinak 10 pieza\";\n    msg.topic=\"Aitor Azpiroz Machine\"\n    return msg;\n    }\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 690,
+        "y": 460,
+        "wires": [
+            [
+                "3a4a172a.eb8c88",
+                "aa63e6bf.760f48"
+            ]
+        ]
+    },
+    {
+        "id": "3a4a172a.eb8c88",
+        "type": "e-mail",
+        "z": "1bf8970d.a07109",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "axpirina@oteitzalp.com",
+        "dname": "Emaila bidali",
+        "x": 890,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "aa63e6bf.760f48",
+        "type": "ui_toast",
+        "z": "1bf8970d.a07109",
+        "position": "top right",
+        "displayTime": "10",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "topic": "",
+        "name": "",
+        "x": 880,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "7fba33d1.561b7c",
+        "type": "ui_group",
+        "z": "",
+        "name": "Pieza Kontatzailea",
+        "tab": "7756b626.b0eac8",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "70a23a2a.da5e54",
+        "type": "ui_group",
+        "z": "",
+        "name": "Egoera",
+        "tab": "7756b626.b0eac8",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "7756b626.b0eac8",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Makina",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
