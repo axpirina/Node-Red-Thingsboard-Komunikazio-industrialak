@@ -1,7 +1,12 @@
 
-# Node Red-Thingsboard Komunikazio industrialak
+# Sarrera
 
-<img src="https://github.com/favicon.ico" width="48" align="right"> 
+Karpeta honetan Node Red-en beharko dituzuen eta npm idez instalatu ezin dituzuen nodoak aurkituko dituzue.
+
+# Node Red nodo bereziak
+
+<img src="https://github.com/favicon.ico" width="48">
+
 
 <!-- [START badges] -->
 
@@ -47,22 +52,7 @@ Emaiguzu txio bat: https://twitter.com/tknika?lang=es
 <img src="https://i.ibb.co/fNYWVJd/erloju-nodoa.png" width="80"  align="center">
 
 
-3. Instalazio pausuak
-
-```bash
-npm i puppeteer
-# or "yarn add puppeteer"
-```
-
-
-
-Since version 1.7.0 we publish the [`puppeteer-core`](https://www.npmjs.com/package/puppeteer-core) package,
-a version of Puppeteer that doesn't download any browser by default.
-
-```bash
-npm i puppeteer-core
-# or "yarn add puppeteer-core"
-```
+## Nodoak 
 
 Erloju nodoa **DataTimeWidget.json**
 
