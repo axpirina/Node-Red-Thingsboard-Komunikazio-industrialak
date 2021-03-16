@@ -15,7 +15,7 @@ Karpeta honetan Node Red-en beharko dituzuen eta npm idez instalatu ezin dituzue
 
 <!-- [END badges] -->
 
-<img src="https://user-images.githubusercontent.com/10379601/29446482-04f7036a-841f-11e7-9872-91d1fc2ea683.png" height="200" align="right">
+<img src="https://i.ibb.co/Jc1yCwM/oteitza-logo.png" height="200" align="right">
 
 ###### [Oteitza](http://www.oteitzalp.eus/) | [Hezkuntza](http://www.oteitzalp.eus/eu/hezkuntza) | [Tknika](http://www.oteitzalp.eus/eu/hezkuntza) | [Github](https://github.com/Tknika)
 
