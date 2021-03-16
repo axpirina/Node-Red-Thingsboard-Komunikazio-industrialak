@@ -5,7 +5,7 @@
 Karpeta honetan Node Red-en beharko dituzuen eta npm idez instalatu ezin dituzuen nodoak aurkituko dituzue.
 
 
-<img src="https://github.com/favicon.ico" Align="centre">
+<img src="https://github.com/favicon.ico" Align="right">
 
 
 <!-- [START badges] -->
@@ -34,50 +34,6 @@ Hemen aurkituko dituzuen gida gehienak zuen eskola nahiz lantegian aplika ditzak
 <!-- [END usecases] -->
 
 Emaiguzu txio bat: https://twitter.com/tknika?lang=es
-
-<!-- [START getstarted] -->
-
-<img src="https://github.com/favicon.ico" width="48">
-
-## Hasierako pausuak
-
-### Instalazioa
-
-1. Node Red ireki,  `import`, eta itsatsi.
-
-<img src="https://i.ibb.co/0G03zw7/inportatu.png" width="160" height="160" align="center">
-
-2. Nodoa eskuragarri dugu iada.
-
-<img src="https://i.ibb.co/fNYWVJd/erloju-nodoa.png" width="80"  align="center">
-
-
-3. Instalazio pausuak
-
-```bash
-npm i puppeteer
-# or "yarn add puppeteer"
-```
-
-
-
-Since version 1.7.0 we publish the [`puppeteer-core`](https://www.npmjs.com/package/puppeteer-core) package,
-a version of Puppeteer that doesn't download any browser by default.
-
-```bash
-npm i puppeteer-core
-# or "yarn add puppeteer-core"
-```
-
-Erloju nodoa **DataTimeWidget.json**
-
-```json
-[{"id":"b97bc1c0.cb899","type":"ui_template","z":"7583a640.3bbbd8","group":"c982fbb8.1deb38","name":"Clock Toolbar","order":2,"width":"0","height":"0","format":"<script id=\"titleScript\" type=\"text/javascript\">\n\n$(function() {\n    if($('.md-toolbar-tools').length != 0){\n        loadClock();\n    }else setTimeout(loadClock, 500)\n});\n\nfunction loadClock(){\n    $('#clock').remove();\n    var toolbar = $('.md-toolbar-tools');\n    \n    var div = $('<div/>');\n    var p = $('<p/ id=\"clock\">');\n    \n    div.append(p);\n    div[0].style.margin = '5px 5px 5px auto';\n    toolbar.append(div);\n\n    function displayTitle(lh) {\n        p.text(lh); \n    }\n    \n    function upTime() {\n        var d = new Date();\n        p.text(d.toLocaleString());\n    }\n\n    if(document.clockInterval){ \n            clearInterval(document.clockInterval);\n            document.clockInterval = null;\n    }\n        \n    document.clockInterval = setInterval(upTime,1000);\n}\n\n</script>","storeOutMessages":false,"fwdInMessages":false,"templateScope":"global","x":420,"y":80,"wires":[[]]},{"id":"c982fbb8.1deb38","type":"ui_group","z":"","name":"hidden_group","tab":"7c447e96.4b96a","disp":false,"width":"6","collapse":false},{"id":"7c447e96.4b96a","type":"ui_tab","z":"","name":"Zooland Sys","icon":"home","order":1,"disabled":false,"hidden":false}]
-
-```
-
-
-
 
 
 (c) 2021 [Tknika](https://tknika.eus/) )
