@@ -1,13 +1,7 @@
 
+# Node Red-Thingsboard Komunikazio industrialak
 
-# Sarrera
-
-Karpeta honetan Node Red-en beharko dituzuen eta npm idez instalatu ezin dituzuen nodoak aurkituko dituzue.
-
-# Node Red nodo bereziak
-
-<img src="https://github.com/favicon.ico" width="48">
-
+<img src="https://github.com/favicon.ico" width="48" align="right"> 
 
 <!-- [START badges] -->
 
