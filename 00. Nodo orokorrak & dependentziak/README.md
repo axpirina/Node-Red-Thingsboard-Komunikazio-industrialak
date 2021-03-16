@@ -6,7 +6,7 @@ In this repository different Node-RED flows can be found
 
 ## Author
 
-(c) 2021 [Tknika](https://tknika.eus/) ([Aitor Iturrioz](https://github.com/bodiroga))
+(c) 2021 [Tknika](https://tknika.eus/) )
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
