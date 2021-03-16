@@ -5,7 +5,7 @@
 Karpeta honetan Node Red-en beharko dituzuen eta npm idez instalatu ezin dituzuen nodoak aurkituko dituzue.
 
 
-<img src="https://github.com/favicon.ico" Align="right">
+<img src="https://github.com/favicon.ico" Align="centre">
 
 
 <!-- [START badges] -->
